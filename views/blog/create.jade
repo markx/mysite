@@ -1,0 +1,8 @@
+extends ../layout
+
+block content
+  h1 create a new post
+  form(method="post", action="/blog/")
+    input.form-control(type="text", name="title", placeholder="Title here", value="")
+    textarea.form-control(rows='10' name="body", placeholder="Content here")
+    button.btn.btn-default(type="submit") Post

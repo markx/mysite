@@ -1,0 +1,11 @@
+extends ../layout
+
+block content
+  a(href="/blog/create") Post A New Blog
+  .container
+    each obj in objects
+      .list-group
+        a(href='#')
+          .blog-post
+            h2.blog-post-title= obj.title
+            p= obj.body
