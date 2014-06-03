@@ -1,5 +1,9 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mysite');
+var uristring =
+process.env.MONGOLAB_URI ||
+process.env.MONGOHQ_URL ||
+'mongodb://localhost/mysite';
+mongoose.connect(uristring);
 var db = mongoose.connection;
 db.on('error', function (err) {
     console.log(err);
