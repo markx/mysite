@@ -12,4 +12,7 @@ var PostSchema = new Schema({
     }]
 });
 
+PostSchema.path('title').required(true, 'Blog post title cannot be blank');
+PostSchema.path('body').required(true, 'Blog post body cannot be blank');
+
 mongoose.model('Post', PostSchema);
