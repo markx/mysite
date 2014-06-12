@@ -9,6 +9,7 @@ db.on('error', function (err) {
     console.log(err);
 });
 require('./models/blog');
+require('./models/imgbin');
 
 var express = require('express');
 var path = require('path');
@@ -19,6 +20,7 @@ var bodyParser = require('body-parser');
 
 var routes = require('./routes/index');
 var blog = require('./routes/blog');
+var imgbin = require('./routes/imgbin');
 var users = require('./routes/users');
 
 var app = express();
@@ -36,6 +38,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/blog', blog);
+app.use('/imgbin', imgbin);
 app.use('/users', users);
 
 /// catch 404 and forward to error handler
